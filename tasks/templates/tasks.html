@@ -1,0 +1,6 @@
+{% extends "index.html" %} {% block "content" %}
+<h1>Tareas listadas</h1>
+{% for task in tasks %}
+<li>{{task.title}}</li>
+<p>{{task.description}}</p>
+{% endfor %} {% endblock "content" %}
