@@ -1,0 +1,9 @@
+{% extends "index.html" %} {% block "content" %}
+<h1>Edit Profile</h1>
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %} {{ form.as_p }}
+  <!-- Muestra el formulario como párrafos -->
+  <button type="submit">Save changes</button>
+</form>
+<a href="{% url 'profile' %}">Back to Profile</a>
+{% endblock "content" %}

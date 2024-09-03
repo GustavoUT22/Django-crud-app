@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Welcome to my crud application</h1>
+    <p>{{data}}</p>
+    <nav>
+      <ul>
+        {% if user.is_authenticated %}
+            <p>Welcome, {{ user.username }}!</p>
+            <a href="{% url 'logout' %}">Logout</a>
+        
+        {% else %}
+        <li><a href="{% url "signup" %}">signup</a></li>
+        <li><a href="{% url "login"%}">login</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+    {% block "content" %}
+    index de la apliacion{% endblock "content" %}
+  </body>
+</html>

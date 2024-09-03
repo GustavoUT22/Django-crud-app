@@ -1,0 +1,8 @@
+{% extends "index.html" %} {% block "content" %}
+{{error}}
+<form action={% url "login" %} method="POST">
+  {%csrf_token%}
+  {{form}} 
+  <button>Iniciar sesión</button>
+</form>
+{% endblock "content" %}
